@@ -1,0 +1,109 @@
+@import 'normolize'
+@import 'fonts'
+@import 'elements'
+
+main
+    position: relative
+    z-index: 1
+    min-height: 100vh
+    min-height: 100lvh
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-start
+    padding-left: 0
+
+video
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    object-fit: cover
+    &.pc
+        display: none
+        @media screen and ( min-width: 800px )
+            display: block
+    &.mob
+        @media screen and ( max-width: 500px )
+            object-position: bottom center
+        @media screen and ( min-width: 800px )
+            display: none
+
+.content
+    text-align: center
+    width: 100%
+    max-width: 58%
+    min-height: 33vh
+    margin: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    @media screen and ( max-width: 800px )
+        min-height: 40vh
+
+.footer
+    width: 80%
+    max-width: 600px
+    text-align: center
+    margin: 0 auto
+
+    background-color: rgba(black, .1)
+    backdrop-filter: blur(10px)
+    border: 1px solid rgba(0, 0, 0, .5)
+    border: 1px solid rgba(white, .2)
+
+    border-bottom: none
+    padding: 20px 0 30px    
+    border-radius: 90px 90px 0 0
+
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 10px
+
+    @media screen and ( max-width: 700px )
+        border-radius: 50px 50px 0 0
+
+    a
+        display: inline-block
+        padding: 10px
+        border-radius: 15px
+        img
+            display: block
+            max-width: 40px
+
+        &:last-child
+            img
+                max-width: 43px
+
+        &:hover
+            background-color: rgba(white, .1)
+            transform: scale(1.05)
+
+.roadmap 
+    padding: 100px 0
+    display: flex
+    align-items: center
+    .container 
+        height: 100%
+        width: 100%
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        flex-wrap: wrap
+        gap: 5%
+
+    .heading 
+        width: 100%
+        height: 180px
+        object-fit: contain
+        margin: 0 auto 20px
+
+    .phase
+        width: 550px
+        max-width: 40%

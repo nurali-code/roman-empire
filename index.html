@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Empire</title>
+    <meta name="theme-color" content="#762aa5" />
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <main>
+        <!-- <video id="vidMob" playsinline muted autoplay loop poster="img/poster_mob.jpg" class="mob" src="vid/bloc_1.mp4" type="video/mp4"></video> -->
+        <video id="vidPc" muted loop poster="img/poster.jpg" class="pc" src="vid/bloc_1.mp4" type="video/mp4"></video>
+        <div class="content">
+            <button class="btn" onclick="copyText()"
+                data-copy="5W4wQzvAkr1zL2bGbToueLE7Dtme8aB5unknNRjNCk7q">5W4wQzvAkr1zL2bGbToueLE7Dtme8aB5unknNRjNCk7q
+                <img src="img/ic-copy.svg" alt="copy">
+            </button>
+            <div target="_blank" class="footer">
+                <a href="https://x.com/jeetbrain" target="_blank"><img src="img/X.svg" alt="cc"></a>
+                <a href="https://dexscreener.com/solana/5W4wQzvAkr1zL2bGbToueLE7Dtme8aB5unknNRjNCk7q"
+                    target="_blank"><img src="img/cc.png" alt="cc"></a>
+                <a href="https://t.me/brainsolana" target="_blank"><img src="img/tg.png" alt="tf"></a>
+            </div>
+        </div>
+    </main>
+
+    <section class="roadmap">
+        <video id="vid2" muted autoplay loop poster="img/poster_2.jpg" class="pc" src="vid/block_2.mp4" type="video/mp4"></video>
+        <div class="container">
+            <img src="img/roadmap.png" class="heading" loading="lazy" alt="roadmap">
+            <img src="img/phase_1.png" class="phase" loading="lazy" alt="phase">
+            <img src="img/phase_2.png" class="phase" loading="lazy" alt="phase">
+        </div>
+    </section>
+
+    <script>
+        if (window.innerWidth >= 1000) {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver(handleIntersection, options);
+
+            // Target videos
+            const video1 = document.getElementById('vidPc');
+            const video2 = document.getElementById('vid2');
+
+            // Observe videos
+            observer.observe(video1);
+            observer.observe(video2);
+
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // If the video is in view, play it
+                        entry.target.play();
+                    } else {
+                        // If the video is out of view, pause it
+                        entry.target.pause();
+                    }
+                });
+            }
+        }
+
+        // const vidPc = document.getElementById('vidPc');
+        // const vidMob = document.getElementById('vidMob');
+        // if (window.innerWidth >= 800) {
+        //     vidPc.setAttribute('autoplay', true)
+        //     vidMob.removeAttribute('autoplay', true)
+        // } else {
+        //     vidPc.removeAttribute('autoplay', true)
+        //     vidMob.setAttribute('autoplay', true)
+        // }
+
+        function copyText() {
+            var button = document.querySelector('.btn');
+            var dataToCopy = button.getAttribute('data-copy');
+            navigator.clipboard.writeText(dataToCopy)
+                .then(function () { alert('Text copied: ' + dataToCopy); })
+                .catch(function (err) { console.error('Failed to copy text:', err); });
+        }
+    </script>
+
+
+</body>
+
+</html>
