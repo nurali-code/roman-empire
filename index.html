@@ -13,8 +13,9 @@
 
 <body>
     <main>
-        <!-- <video id="vidMob" playsinline muted autoplay loop poster="img/poster_mob.jpg" class="mob" src="vid/bloc_1.mp4" type="video/mp4"></video> -->
-        <video id="vidPc" muted loop poster="img/poster.jpg" class="pc" src="vid/bloc_1.mp4" type="video/mp4"></video>
+        <!-- <video controlsList="nofullscreen" id="vidMob" playsinline muted autoplay loop poster="img/poster_mob.jpg" class="mob" src="vid/bloc_1.mp4" type="video/mp4"></video> -->
+        <video controlsList="nofullscreen" id="vidPc" muted loop poster="img/poster.jpg" class="pc" src="vid/bloc_1.mp4"
+            type="video/mp4"></video>
         <div class="content">
             <button class="btn" onclick="copyText()"
                 data-copy="5W4wQzvAkr1zL2bGbToueLE7Dtme8aB5unknNRjNCk7q">5W4wQzvAkr1zL2bGbToueLE7Dtme8aB5unknNRjNCk7q
@@ -30,7 +31,8 @@
     </main>
 
     <section class="roadmap">
-        <video id="vid2" muted autoplay loop poster="img/poster_2.jpg" class="pc" src="vid/block_2.mp4" type="video/mp4"></video>
+        <video controlsList="nofullscreen" id="vid2" muted loop poster="img/poster_2.jpg" src="vid/block_2.mp4"
+            type="video/mp4"></video>
         <div class="container">
             <img src="img/roadmap.png" class="heading" loading="lazy" alt="roadmap">
             <img src="img/phase_1.png" class="phase" loading="lazy" alt="phase">
@@ -38,35 +40,26 @@
         </div>
     </section>
 
+    <section class="empirenomics">
+        <video controlsList="nofullscreen" id="vid3" muted loop poster="img/poster_3.jpg" src="vid/block_3.mp4"
+            type="video/mp4"></video>
+        <img src="img/empirenomics.png" class="empirenomics__heading" loading="lazy" alt="empirenomics">
+    </section>
+
     <script>
-        if (window.innerWidth >= 1000) {
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-            };
-
-            const observer = new IntersectionObserver(handleIntersection, options);
-
-            // Target videos
-            const video1 = document.getElementById('vidPc');
-            const video2 = document.getElementById('vid2');
-
-            // Observe videos
-            observer.observe(video1);
-            observer.observe(video2);
-
-            function handleIntersection(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // If the video is in view, play it
-                        entry.target.play();
-                    } else {
-                        // If the video is out of view, pause it
-                        entry.target.pause();
-                    }
-                });
-            }
+        const options = { root: null, rootMargin: '0px', threshold: 0.4 };
+        const observer = new IntersectionObserver(handleIntersection, options);
+        const video1 = document.getElementById('vidPc');
+        const video2 = document.getElementById('vid2');
+        const video3 = document.getElementById('vid3');
+        observer.observe(video1);
+        observer.observe(video2);
+        observer.observe(video3);
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.play(); }
+                else { entry.target.pause(); }
+            });
         }
 
         // const vidPc = document.getElementById('vidPc');
