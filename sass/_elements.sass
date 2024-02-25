@@ -37,7 +37,7 @@ button
     &:active
         transform: scale(.98)
 
-section 
+section
     position: relative
     z-index: 1
     min-height: 100vh
@@ -79,6 +79,12 @@ section
         right: 22px
         top: 50%
         transform: translateY(-50%)
+
+    &[disabled]
+        text-transform: uppercase
+        padding: 14px 62px
+        img 
+            display: none
 
     @media screen and ( max-width: 700px )
         font-size: 16px
