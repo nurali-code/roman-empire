@@ -30,7 +30,7 @@ main
         @media screen and ( max-width: 1000px )
             min-height: 70vh
             max-width: 100%
-            padding: 0 
+            padding: 0
 
     .footer
         width: 88%
@@ -91,6 +91,10 @@ video
     padding: 100px 0
     @media screen and ( max-width: 1000px )
         background-image: url('../img/block_2.jpg')
+
+        &::after
+            transform: scaleX(-1)
+
     .container
         height: 100%
         width: 100%
