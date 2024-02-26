@@ -37,7 +37,12 @@ button
     &:active
         transform: scale(.98)
 
-section
+section, main
+    display: flex
+    align-items: center
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
     position: relative
     z-index: 1
     min-height: 100vh
@@ -83,7 +88,7 @@ section
     &[disabled]
         text-transform: uppercase
         padding: 14px 62px
-        img 
+        img
             display: none
 
     @media screen and ( max-width: 700px )

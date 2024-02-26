@@ -5,13 +5,17 @@
 main
     position: relative
     z-index: 1
-    min-height: 100vh
-    min-height: 100lvh
-    display: flex
     flex-direction: column
     justify-content: flex-end
     align-items: flex-start
     padding-left: 0
+    .logo
+        display: none
+    @media screen and ( max-width: 1000px )
+        background-image: url('../img/main.jpg')
+        .logo
+            display: block
+
     .content
         text-align: center
         width: 100%
@@ -22,8 +26,11 @@ main
         flex-direction: column
         align-items: center
         justify-content: space-between
-        @media screen and ( max-width: 800px )
-            min-height: 40vh
+
+        @media screen and ( max-width: 1000px )
+            min-height: 70vh
+            max-width: 100%
+            padding: 0 
 
     .footer
         width: 88%
@@ -64,11 +71,6 @@ main
                 background-color: rgba(white, .1)
                 transform: scale(1.05)
 
-    @media screen and ( max-width: 1000px )
-        .content
-            max-width: 100%
-            padding: 0 20px
-
 video
     width: 100%
     height: 100%
@@ -80,21 +82,15 @@ video
     z-index: -1
     object-fit: cover
     pointer-events: none
-    // &.pc
-    //     display: none
-    //     @media screen and ( min-width: 800px )
-    //         display: block
-
-    &.mob
-        @media screen and ( max-width: 500px )
-            object-position: bottom center
-        @media screen and ( min-width: 800px )
-            display: none
+    &.pc
+        display: none
+        @media screen and ( min-width: 1000px )
+            display: block
 
 .roadmap
     padding: 100px 0
-    display: flex
-    align-items: center
+    @media screen and ( max-width: 1000px )
+        background-image: url('../img/block_2.jpg')
     .container
         height: 100%
         width: 100%
@@ -129,10 +125,12 @@ video
             max-width: 80%
 
 .empirenomics
-    display: flex
-    align-items: center
     justify-content: center
     padding: 0 20px
+
+    @media screen and ( max-width: 1000px )
+        background-image: url('../img/block_3.jpg')
+
     &__heading
         width: 800px
         max-width: 100%
